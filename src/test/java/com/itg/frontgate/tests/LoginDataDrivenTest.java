@@ -22,8 +22,6 @@ public class LoginDataDrivenTest extends BaseTest {
 
         LoginPage login = new LoginPage(driver);
         login.verifyLoginPageLoaded();
-        driver.manage().deleteAllCookies();
-
         login.enterEmail(email);
         login.enterPassword(password);
         login.clickSignIn();
