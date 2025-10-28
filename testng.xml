@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Frontgate Selenium Suite" verbose="1" parallel="false">
+
+  <!-- 🔹 الموقع الرئيسي لموقع Frontgate -->
+  <parameter name="siteURL" value="https://www.frontgate.com/ShoppingCartView" />
+
+  <!-- يمكنك إضافة المزيد من الـ parameters لاحقًا (مثل driverPath أو sheetName) -->
+  
+  <test name="Data-Driven Login">
+    <classes>
+      <class name="com.itg.frontgate.tests.LoginDataDrivenTest"/>
+    </classes>
+  </test>
+
+</suite>
