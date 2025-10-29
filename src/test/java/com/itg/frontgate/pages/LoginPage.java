@@ -53,18 +53,46 @@ public class LoginPage {
         }
     }
 
-    public boolean isErrorVisible() {
+    public String getErrorMessage() {
+        WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
         try {
-            wait.until(ExpectedConditions.or(
-                    ExpectedConditions.visibilityOfElementLocated(LoginPageSelectors.ERROR_EMAIL),
-                    ExpectedConditions.visibilityOfElementLocated(LoginPageSelectors.ERROR_PASSWORD),
-                    ExpectedConditions.visibilityOfElementLocated(LoginPageSelectors.ERROR_GENERAL)
-            ));
-            return true; 
-        } catch (TimeoutException te) {
-            return false; 
+            WebElement errorElement = null;
+
+            if (isElementVisible(LoginPageSelectors.ERROR_EMAIL, shortWait)) {
+                errorElement = driver.findElement(LoginPageSelectors.ERROR_EMAIL);
+            } else if (isElementVisible(LoginPageSelectors.ERROR_PASSWORD, shortWait)) {
+                errorElement = driver.findElement(LoginPageSelectors.ERROR_PASSWORD);
+            } else if (isElementVisible(LoginPageSelectors.ERROR_GENERAL, shortWait)) {
+                errorElement = driver.findElement(LoginPageSelectors.ERROR_GENERAL);
+            }
+
+            if (errorElement != null) {
+                String errorText = errorElement.getText().trim();
+                if (errorText.isEmpty()) {
+                    errorText = errorElement.getAttribute("innerText").trim();
+                }
+                System.out.println("⚠️ Error message detected: " + errorText);
+                return errorText;
+            }
+
+            return "";
+
+        } catch (Exception e) {
+            System.out.println("⚠️ No error message found or unexpected issue: " + e.getMessage());
+            return "";
         }
     }
+
+    private boolean isElementVisible(By locator, WebDriverWait wait) {
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        }
+    }
+
 
     public boolean isLoggedIn() {
         try {
@@ -91,6 +119,4 @@ public class LoginPage {
             return false;
         }
     }
-
-
 }

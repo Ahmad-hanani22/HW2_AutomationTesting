@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
-
 import java.time.Duration;
 
 public class BaseTest {
@@ -27,8 +26,6 @@ public class BaseTest {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
-
-
 
     @AfterMethod(alwaysRun = true)
     public void tearDownMethod() {

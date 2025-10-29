@@ -26,12 +26,30 @@ public class LoginDataDrivenTest extends BaseTest {
         login.enterPassword(password);
         login.clickSignIn();
 
-        boolean errorVisible = login.isErrorVisible();
+        String errorMessage = login.getErrorMessage();
         boolean loggedIn = login.isLoggedIn();
 
-        if (errorVisible) {
+        if (!errorMessage.isEmpty()) {
             System.out.println("❌ Invalid login detected for user: " + email);
-            Assert.assertTrue(true);
+            System.out.println("🧩 Error text: " + errorMessage);
+
+            // ✅ تطابق النصوص الثلاثة بدقة
+            if (errorMessage.equalsIgnoreCase("Please enter a valid email address.")) {
+                Assert.assertEquals(errorMessage, "Please enter a valid email address.", "❌ Unexpected email error message!");
+                System.out.println("✅ Correct error for invalid/missing email.");
+            }
+            else if (errorMessage.equalsIgnoreCase("Please enter your password.")) {
+                Assert.assertEquals(errorMessage, "Please enter your password.", "❌ Unexpected password error message!");
+                System.out.println("✅ Correct error for missing password.");
+            }
+            else if (errorMessage.equalsIgnoreCase("The email or password you entered is incorrect.")) {
+                Assert.assertEquals(errorMessage, "The email or password you entered is incorrect.", "❌ Unexpected general error message!");
+                System.out.println("✅ Correct error for invalid credentials.");
+            }
+            else {
+                Assert.fail("❌ Unexpected error message: " + errorMessage);
+            }
+
         } else if (loggedIn) {
             System.out.println("✅ Successful login detected for user: " + email);
             Assert.assertTrue(true);
