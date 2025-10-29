@@ -66,15 +66,31 @@ public class LoginPage {
         }
     }
 
-
     public boolean isLoggedIn() {
         try {
-            WebElement welcome = wait.until(
-                    ExpectedConditions.visibilityOfElementLocated(LoginPageSelectors.ACCOUNT_HEADER)
-            );
+            WebDriverWait longWait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+            WebElement accountBtn = longWait.until(
+                    ExpectedConditions.elementToBeClickable(LoginPageSelectors.ACCOUNT_BUTTON));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", accountBtn);
+            System.out.println("👆 Clicked on My Account after login.");
+
+            WebElement welcome = longWait.until(
+                    ExpectedConditions.visibilityOfElementLocated(LoginPageSelectors.WELCOME_TEXT));
+
+            String welcomeMsg = welcome.getText().trim();
+            System.out.println("✅ Welcome message found: " + welcomeMsg);
+
             return welcome.isDisplayed();
+
         } catch (TimeoutException te) {
+            System.out.println("❌ Welcome message not found after clicking My Account.");
+            return false;
+        } catch (Exception e) {
+            System.out.println("⚠️ Unexpected error checking login: " + e.getMessage());
             return false;
         }
     }
+
+
 }

@@ -24,6 +24,17 @@ public final class LoginPageSelectors {
     public static final By ERROR_GENERAL =
             By.cssSelector("div.u-color-error"); // البريد صحيح لكن الباسورد خطأ
 
-    public static final By ACCOUNT_HEADER =
-            By.cssSelector("div.c-list-tile__content-welcome");
+    public static final By ACCOUNT_BUTTON =
+            By.cssSelector("button.t-header__my-account, div.t-header__my-account, span.t-header__inner-button");
+
+    public static final By MY_ACCOUNT_LINK =
+    	    By.xpath("//*[contains(@class,'my-account') and contains(normalize-space(text()),'My Account')]");
+
+
+    public static final By WELCOME_TEXT =
+            By.xpath("//*[contains(text(),'Welcome,')]");
+
+
+
+
 }
