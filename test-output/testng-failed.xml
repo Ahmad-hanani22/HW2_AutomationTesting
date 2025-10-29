@@ -6,10 +6,11 @@
     <classes>
       <class name="com.itg.frontgate.tests.LoginDataDrivenTest">
         <methods>
-          <include name="loginCases" invocation-numbers="1 4"/>
           <include name="setUpClass"/>
+          <include name="loginCases" invocation-numbers="1 4"/>
           <include name="tearDownMethod"/>
           <include name="setUpMethod"/>
+          <include name="tearDownClass"/>
         </methods>
       </class> <!-- com.itg.frontgate.tests.LoginDataDrivenTest -->
     </classes>

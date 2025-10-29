@@ -93,7 +93,6 @@ public class LoginPage {
         }
     }
 
-
     public boolean isLoggedIn() {
         try {
             WebDriverWait longWait = new WebDriverWait(driver, Duration.ofSeconds(20));
