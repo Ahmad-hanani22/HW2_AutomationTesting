@@ -6,7 +6,7 @@
     <classes>
       <class name="com.itg.frontgate.tests.LoginDataDrivenTest">
         <methods>
-          <include name="loginCases" invocation-numbers="2"/>
+          <include name="loginCases" invocation-numbers="1 4"/>
           <include name="setUpClass"/>
           <include name="tearDownMethod"/>
           <include name="setUpMethod"/>

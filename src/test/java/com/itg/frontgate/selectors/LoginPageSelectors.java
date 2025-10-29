@@ -7,6 +7,7 @@ public final class LoginPageSelectors {
 
     public static final By EMAIL_INPUT =
             By.cssSelector("input[type='email']");
+    
 
     public static final By PASSWORD_INPUT =
             By.cssSelector("input[type='password']");

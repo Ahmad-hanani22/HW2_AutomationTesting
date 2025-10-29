@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="5" passed="3" failed="1" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-29T11:18:54 AKDT" name="Frontgate Selenium Suite" finished-at="2025-10-29T11:21:23 AKDT" duration-ms="148586">
+  <suite started-at="2025-10-29T12:51:03 AKDT" name="Frontgate Selenium Suite" finished-at="2025-10-29T12:53:39 AKDT" duration-ms="156156">
     <groups>
     </groups>
-    <test started-at="2025-10-29T11:18:54 AKDT" name="Data-Driven Login" finished-at="2025-10-29T11:21:23 AKDT" duration-ms="148586">
+    <test started-at="2025-10-29T12:51:03 AKDT" name="Data-Driven Login" finished-at="2025-10-29T12:53:39 AKDT" duration-ms="156156">
       <class name="com.itg.frontgate.tests.LoginDataDrivenTest">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T11:18:54 AKDT" name="setUpClass" finished-at="2025-10-29T11:18:55 AKDT" duration-ms="464" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T12:51:03 AKDT" name="setUpClass" finished-at="2025-10-29T12:51:04 AKDT" duration-ms="458" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T11:18:55 AKDT" name="setUpMethod" finished-at="2025-10-29T11:18:56 AKDT" duration-ms="1045" status="PASS">
+        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T12:51:04 AKDT" name="setUpMethod" finished-at="2025-10-29T12:51:05 AKDT" duration-ms="1110" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpMethod -->
-        <test-method signature="loginCases(java.lang.String,java.lang.String)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T11:18:56 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-29T11:19:31 AKDT" duration-ms="35038" status="PASS">
+        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T12:51:05 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-29T12:51:36 AKDT" duration-ms="30605" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -24,50 +24,36 @@
             </param>
             <param index="1">
               <value>
+                <![CDATA[0569630981Aa$]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[x]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginCases -->
+        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T12:51:36 AKDT" name="tearDownMethod" finished-at="2025-10-29T12:51:36 AKDT" duration-ms="336" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownMethod -->
+        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T12:51:36 AKDT" name="setUpMethod" finished-at="2025-10-29T12:51:37 AKDT" duration-ms="692" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpMethod -->
+        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T12:51:37 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-29T12:52:06 AKDT" duration-ms="29299" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
                 <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginCases -->
-        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T11:19:31 AKDT" name="tearDownMethod" finished-at="2025-10-29T11:19:32 AKDT" duration-ms="381" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownMethod -->
-        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T11:19:32 AKDT" name="setUpMethod" finished-at="2025-10-29T11:19:32 AKDT" duration-ms="685" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpMethod -->
-        <test-method signature="loginCases(java.lang.String,java.lang.String)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T11:19:32 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-29T11:20:16 AKDT" duration-ms="43657" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ahmadj7hanani0@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[WrongPass$123]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginCases -->
-        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T11:20:16 AKDT" name="tearDownMethod" finished-at="2025-10-29T11:20:16 AKDT" duration-ms="308" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownMethod -->
-        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T11:20:16 AKDT" name="setUpMethod" finished-at="2025-10-29T11:20:17 AKDT" duration-ms="644" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpMethod -->
-        <test-method signature="loginCases(java.lang.String,java.lang.String)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T11:20:17 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-29T11:21:23 AKDT" duration-ms="65512" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ahmadj7hanani0@gmail.com]]>
               </value>
             </param>
             <param index="1">
@@ -75,15 +61,25 @@
                 <![CDATA[0569630981Aa$]]>
               </value>
             </param>
+            <param index="2">
+              <value>
+                <![CDATA[x]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
           </params>
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[No feedback shown for ahmadj7hanani0@gmail.com]]>
+              <![CDATA[Unexpected error message: Error: Please Enter Email Address.]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: No feedback shown for ahmadj7hanani0@gmail.com
+              <![CDATA[java.lang.AssertionError: Unexpected error message: Error: Please Enter Email Address.
 at org.testng.Assert.fail(Assert.java:111)
-at com.itg.frontgate.tests.LoginDataDrivenTest.loginCases(LoginDataDrivenTest.java:40)
+at com.itg.frontgate.tests.LoginDataDrivenTest.loginCases(LoginDataDrivenTest.java:68)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -116,7 +112,145 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginCases -->
-        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T11:21:23 AKDT" name="tearDownMethod" finished-at="2025-10-29T11:21:23 AKDT" duration-ms="247" status="PASS">
+        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T12:52:06 AKDT" name="tearDownMethod" finished-at="2025-10-29T12:52:06 AKDT" duration-ms="194" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownMethod -->
+        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T12:52:06 AKDT" name="setUpMethod" finished-at="2025-10-29T12:52:07 AKDT" duration-ms="646" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpMethod -->
+        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T12:52:07 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-29T12:53:06 AKDT" duration-ms="59533" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ahmad@@gmail]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0569630981Aa$]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[x]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginCases -->
+        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T12:53:06 AKDT" name="tearDownMethod" finished-at="2025-10-29T12:53:07 AKDT" duration-ms="188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownMethod -->
+        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T12:53:07 AKDT" name="setUpMethod" finished-at="2025-10-29T12:53:07 AKDT" duration-ms="680" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpMethod -->
+        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T12:53:07 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-29T12:53:38 AKDT" duration-ms="30795" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ahmad@@gmail]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[x]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginCases -->
+        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T12:53:38 AKDT" name="tearDownMethod" finished-at="2025-10-29T12:53:38 AKDT" duration-ms="221" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownMethod -->
+        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T12:53:38 AKDT" name="setUpMethod" finished-at="2025-10-29T12:53:39 AKDT" duration-ms="661" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpMethod -->
+        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T12:53:39 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-29T12:53:39 AKDT" duration-ms="51" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ahmadj7hanani0@gmail]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[WrongPass$123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[RunFlag is empty. Skipping row 5]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: RunFlag is empty. Skipping row 5
+at com.itg.frontgate.tests.LoginDataDrivenTest.loginCases(LoginDataDrivenTest.java:28)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginCases -->
+        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@f5958c9]" started-at="2025-10-29T12:53:39 AKDT" name="tearDownMethod" finished-at="2025-10-29T12:53:39 AKDT" duration-ms="124" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownMethod -->
