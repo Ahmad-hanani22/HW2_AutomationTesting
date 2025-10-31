@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite name="Frontgate Selenium Suite" verbose="1" parallel="false">
+<suite name="Frontgate Full Scenario Suite">
 
-  <!-- 🔹 الموقع الرئيسي لموقع Frontgate -->
-  <parameter name="siteURL" value="https://www.frontgate.com/ShoppingCartView" />
-
-  <!-- يمكنك إضافة المزيد من الـ parameters لاحقًا (مثل driverPath أو sheetName) -->
-  
-  <test name="Data-Driven Login">
-    <classes>
-      <class name="com.itg.frontgate.tests.LoginDataDrivenTest"/>
-    </classes>
-  </test>
+    <test name="Login and Add to Cart Test">
+        <classes>
+            <!-- 1. يتم تشغيل اختبار تسجيل الدخول أولاً -->
+            <class name="com.itg.frontgate.tests.LoginDataDrivenTest"/>
+            
+            <!-- 2. بعد نجاح الدخول، يتم تشغيل اختبار إضافة المنتج على نفس المتصفح -->
+            <class name="com.itg.frontgate.tests.AddToCartTest"/>
+        </classes>
+    </test>
 
 </suite>

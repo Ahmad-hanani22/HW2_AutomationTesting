@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="3" failed="1" skipped="1">
+<testng-results ignored="0" total="8" passed="4" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-29T13:10:38 AKDT" name="Frontgate Selenium Suite" finished-at="2025-10-29T13:13:18 AKDT" duration-ms="160202">
+  <suite started-at="2025-10-30T17:49:55 AKDT" name="Frontgate Full Scenario Suite" finished-at="2025-10-30T17:55:35 AKDT" duration-ms="340252">
     <groups>
     </groups>
-    <test started-at="2025-10-29T13:10:38 AKDT" name="Data-Driven Login" finished-at="2025-10-29T13:13:18 AKDT" duration-ms="160202">
+    <test started-at="2025-10-30T17:49:55 AKDT" name="Login and Add to Cart Test" finished-at="2025-10-30T17:55:35 AKDT" duration-ms="340252">
       <class name="com.itg.frontgate.tests.LoginDataDrivenTest">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:10:38 AKDT" name="setUpClass" finished-at="2025-10-29T13:10:39 AKDT" duration-ms="599" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:49:55 AKDT" name="beforeSuite" finished-at="2025-10-30T17:49:55 AKDT" duration-ms="126" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:10:39 AKDT" name="setUpMethod" finished-at="2025-10-29T13:10:40 AKDT" duration-ms="964" status="PASS">
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:49:55 AKDT" name="setUp" finished-at="2025-10-30T17:49:56 AKDT" duration-ms="1057" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpMethod -->
-        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:10:40 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-29T13:11:11 AKDT" duration-ms="30304" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:49:57 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-30T17:50:57 AKDT" duration-ms="60013" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[ahmadj7hanani0@gmail]]>
+                <![CDATA[ahmadj7hanani0@gmail.com]]>
               </value>
             </param>
             <param index="1">
@@ -38,48 +38,14 @@
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginCases -->
-        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:11:11 AKDT" name="tearDownMethod" finished-at="2025-10-29T13:11:11 AKDT" duration-ms="311" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownMethod -->
-        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:11:11 AKDT" name="setUpMethod" finished-at="2025-10-29T13:11:12 AKDT" duration-ms="669" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpMethod -->
-        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:11:12 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-29T13:11:44 AKDT" duration-ms="32338" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0569630981Aa$]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[x]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-          </params>
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Unexpected error message: Error: Please Enter Email Address.]]>
+              <![CDATA[No feedback shown for ahmadj7hanani0@gmail.com]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Unexpected error message: Error: Please Enter Email Address.
+              <![CDATA[java.lang.AssertionError: No feedback shown for ahmadj7hanani0@gmail.com
 at org.testng.Assert.fail(Assert.java:111)
-at com.itg.frontgate.tests.LoginDataDrivenTest.loginCases(LoginDataDrivenTest.java:70)
+at com.itg.frontgate.tests.LoginDataDrivenTest.loginCases(LoginDataDrivenTest.java:92)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -112,24 +78,42 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginCases -->
-        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:11:44 AKDT" name="tearDownMethod" finished-at="2025-10-29T13:11:44 AKDT" duration-ms="211" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownMethod -->
-        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:11:44 AKDT" name="setUpMethod" finished-at="2025-10-29T13:11:45 AKDT" duration-ms="635" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpMethod -->
-        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:11:45 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-29T13:12:47 AKDT" duration-ms="62128" status="PASS">
+        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:50:57 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-30T17:51:48 AKDT" duration-ms="51717" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[ahmad@@gmail]]>
+                <![CDATA[ahmad@gmail.com]]>
               </value>
             </param>
             <param index="1">
               <value>
                 <![CDATA[0569630981Aa$]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[x]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginCases -->
+        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:51:48 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-30T17:52:38 AKDT" duration-ms="49788" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ahmadj7hanani0@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0569630981Aa$4]]>
               </value>
             </param>
             <param index="2">
@@ -146,24 +130,16 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginCases -->
-        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:12:47 AKDT" name="tearDownMethod" finished-at="2025-10-29T13:12:47 AKDT" duration-ms="210" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownMethod -->
-        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:12:47 AKDT" name="setUpMethod" finished-at="2025-10-29T13:12:48 AKDT" duration-ms="657" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpMethod -->
-        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:12:48 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-29T13:13:17 AKDT" duration-ms="29169" status="PASS">
+        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:52:38 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-30T17:53:08 AKDT" duration-ms="30398" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[ahmad@@gmail]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[]]>
+                <![CDATA[0569630981Aa$]]>
               </value>
             </param>
             <param index="2">
@@ -177,47 +153,14 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginCases -->
-        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:13:17 AKDT" name="tearDownMethod" finished-at="2025-10-29T13:13:17 AKDT" duration-ms="240" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownMethod -->
-        <test-method is-config="true" signature="setUpMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:13:17 AKDT" name="setUpMethod" finished-at="2025-10-29T13:13:18 AKDT" duration-ms="627" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpMethod -->
-        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:13:18 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-29T13:13:18 AKDT" duration-ms="48" status="SKIP">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ahmadj7hanani0@gmail]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[WrongPass$123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.testng.SkipException">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[RunFlag empty]]>
+              <![CDATA[Unexpected error message: Error: Please Enter Email Address.]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.testng.SkipException: RunFlag empty
-at com.itg.frontgate.tests.LoginDataDrivenTest.loginCases(LoginDataDrivenTest.java:38)
+              <![CDATA[java.lang.AssertionError: Unexpected error message: Error: Please Enter Email Address.
+at org.testng.Assert.fail(Assert.java:111)
+at com.itg.frontgate.tests.LoginDataDrivenTest.loginCases(LoginDataDrivenTest.java:78)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -246,19 +189,233 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginCases -->
-        <test-method is-config="true" signature="tearDownMethod()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:13:18 AKDT" name="tearDownMethod" finished-at="2025-10-29T13:13:18 AKDT" duration-ms="164" status="PASS">
+        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:53:08 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-30T17:53:43 AKDT" duration-ms="34742" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ahmadj7hanani0@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[x]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDownMethod -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@15de0b3c]" started-at="2025-10-29T13:13:18 AKDT" name="tearDownClass" finished-at="2025-10-29T13:13:18 AKDT" duration-ms="241" status="PASS">
+        </test-method> <!-- loginCases -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:55:35 AKDT" name="tearDown" finished-at="2025-10-30T17:55:35 AKDT" duration-ms="459" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDownClass -->
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:55:35 AKDT" name="afterSuite" finished-at="2025-10-30T17:55:36 AKDT" duration-ms="509" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
       </class> <!-- com.itg.frontgate.tests.LoginDataDrivenTest -->
-    </test> <!-- Data-Driven Login -->
-  </suite> <!-- Frontgate Selenium Suite -->
+      <class name="com.itg.frontgate.tests.AddToCartTest">
+        <test-method signature="addProductsToCart(java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.AddToCartTest@1e800aaa]" started-at="2025-10-30T17:53:43 AKDT" name="addProductsToCart" data-provider="productsData" finished-at="2025-10-30T17:54:03 AKDT" duration-ms="19533" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Frontgate Resort Collection™ Bath Towels]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Bath Towel]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Chiffon]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[x]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addProductsToCart -->
+        <test-method signature="addProductsToCart(java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.AddToCartTest@1e800aaa]" started-at="2025-10-30T17:54:03 AKDT" name="addProductsToCart" data-provider="productsData" finished-at="2025-10-30T17:55:02 AKDT" duration-ms="58828" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Bath Mat]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[—]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[—]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[x]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[VALIDATION FAILED: The success message did not appear correctly. Found: '' expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: VALIDATION FAILED: The success message did not appear correctly. Found: '' expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at com.itg.frontgate.tests.AddToCartTest.addProductsToCart(AddToCartTest.java:64)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addProductsToCart -->
+        <test-method signature="addProductsToCart(java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.AddToCartTest@1e800aaa]" started-at="2025-10-30T17:55:02 AKDT" name="addProductsToCart" data-provider="productsData" finished-at="2025-10-30T17:55:35 AKDT" duration-ms="33257" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Resort Bath Sheet]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Bath Sheet]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[White]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[x]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Product 'Resort Bath Sheet' was not found. expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Product 'Resort Bath Sheet' was not found. expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at com.itg.frontgate.tests.AddToCartTest.addProductsToCart(AddToCartTest.java:54)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addProductsToCart -->
+      </class> <!-- com.itg.frontgate.tests.AddToCartTest -->
+    </test> <!-- Login and Add to Cart Test -->
+  </suite> <!-- Frontgate Full Scenario Suite -->
 </testng-results>

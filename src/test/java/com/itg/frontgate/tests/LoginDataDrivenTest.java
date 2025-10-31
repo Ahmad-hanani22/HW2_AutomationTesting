@@ -22,7 +22,15 @@ public class LoginDataDrivenTest extends BaseTest {
 
     @DataProvider(name = "loginData")
     public Object[][] loginData() {
-        return ExcelUtil.readSheet(EXCEL_PATH, SHEET_NAME);
+        try {
+            // 🔥 تعديل: استخدام المسار المطلق لضمان العثور على الملف
+            String excelPath = System.getProperty("user.dir") + "/src/test/resources/testdata/loginData.xlsx";
+            return ExcelUtil.readSheet(excelPath, SHEET_NAME); // SHEET_NAME is "Users"
+        } catch (Exception e) {
+            System.out.println("🔥🔥🔥 ERROR IN 'loginData' PROVIDER: " + e.getMessage());
+            e.printStackTrace(); // هذه أهم طباعة، ستظهر الخطأ بالتفصيل
+            return new Object[0][0];
+        }
     }
 
     @Test(dataProvider = "loginData")

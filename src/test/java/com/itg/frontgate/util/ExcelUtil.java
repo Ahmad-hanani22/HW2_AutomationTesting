@@ -1,18 +1,96 @@
 package com.itg.frontgate.util;
 
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.poi.ss.util.CellUtil;
-
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.*;
 import java.util.*;
 
 public class ExcelUtil {
 
-    // يعيد مصفوفة: {email, password, runFlag, rowIndex}
+    private static void ensureFileExists(String path) {
+        File f = new File(path);
+        if (!f.exists()) {
+            throw new RuntimeException("Excel file not found: " + path);
+        }
+    }
+
+    @SuppressWarnings("deprecation")
+	private static String getCellString(Cell cell) {
+        if (cell == null) return "";
+        cell.setCellType(CellType.STRING);
+        return cell.getStringCellValue().trim();
+    }
+
+    private static Map<String, Integer> mapHeaderIndexes(Row header) {
+        Map<String, Integer> map = new HashMap<>();
+        for (Cell c : header) {
+            String name = c.getStringCellValue().trim().toLowerCase();
+            map.put(name, c.getColumnIndex());
+        }
+        return map;
+    }
+
+    // ✅ قراءة شيت المنتجات (ProductName, Qty, Size, Color, RunFlag, Result)
+    public static Object[][] readProducts(String path, String sheetName) {
+    	System.out.println("🧾 Trying to read Excel: " + path + " | Sheet: " + sheetName);
+
+        ensureFileExists(path);
+
+        try (FileInputStream fis = new FileInputStream(path);
+             Workbook wb = WorkbookFactory.create(fis)) {
+
+            Sheet sh = wb.getSheet(sheetName);
+            if (sh == null) {
+                throw new RuntimeException("Sheet not found: " + sheetName);
+            }
+
+            Row header = sh.getRow(0);
+            if (header == null) {
+                throw new RuntimeException("Header row missing in sheet: " + sheetName);
+            }
+
+            Map<String, Integer> cols = mapHeaderIndexes(header);
+
+            int nameCol  = cols.getOrDefault("productname", -1);
+            int qtyCol   = cols.getOrDefault("qty", -1);
+            int sizeCol  = cols.getOrDefault("size", -1);
+            int colorCol = cols.getOrDefault("color", -1);
+            int flagCol  = cols.getOrDefault("runflag", -1);
+
+            if (nameCol < 0 || qtyCol < 0 || flagCol < 0)
+                throw new RuntimeException("Required columns missing in sheet.");
+
+            int lastRow = sh.getLastRowNum();
+            List<Object[]> rows = new ArrayList<>();
+
+            for (int r = 1; r <= lastRow; r++) {
+                Row row = sh.getRow(r);
+                if (row == null) continue;
+
+                String productName = getCellString(row.getCell(nameCol));
+                String qtyStr = getCellString(row.getCell(qtyCol));
+                String size = (sizeCol >= 0) ? getCellString(row.getCell(sizeCol)) : "";
+                String color = (colorCol >= 0) ? getCellString(row.getCell(colorCol)) : "";
+                String runFlag = getCellString(row.getCell(flagCol));
+
+                int qty = 1;
+                try { qty = Integer.parseInt(qtyStr); } catch (Exception ignored) {}
+
+                rows.add(new Object[]{productName, qty, size, color, runFlag, r});
+            }
+
+            Object[][] data = new Object[rows.size()][];
+            for (int i = 0; i < rows.size(); i++) data[i] = rows.get(i);
+            return data;
+
+        } catch (Exception e) {
+            throw new RuntimeException("Failed reading Products sheet: " + e.getMessage(), e);
+        }
+    }
+
+    
+    
+    
+ // ✅ قراءة شيت بسيط (مثل Users) — Email, Password, RunFlag
     public static Object[][] readSheet(String path, String sheetName) {
         ensureFileExists(path);
 
@@ -24,36 +102,32 @@ public class ExcelUtil {
                 throw new RuntimeException("Sheet not found: " + sheetName);
             }
 
-            // تحديد أعمدة العناوين ديناميكيًا
             Row header = sh.getRow(0);
             if (header == null) {
-                throw new RuntimeException("Header row (row 0) is missing in sheet: " + sheetName);
+                throw new RuntimeException("Header row missing in sheet: " + sheetName);
             }
 
-            Map<String, Integer> colIndex = mapHeaderIndexes(header);
+            Map<String, Integer> cols = mapHeaderIndexes(header);
 
-            Integer emailCol = colIndex.getOrDefault("email", -1);
-            Integer passCol  = colIndex.getOrDefault("password", -1);
-            Integer flagCol  = colIndex.getOrDefault("runflag", -1);
-            Integer resCol   = colIndex.get("result"); // قد يكون null، سننشئه عند الكتابة إن لزم
+            int emailCol = cols.getOrDefault("email", -1);
+            int passCol = cols.getOrDefault("password", -1);
+            int flagCol = cols.getOrDefault("runflag", -1);
 
-            if (emailCol < 0 || passCol < 0 || flagCol < 0) {
-                throw new RuntimeException("Required columns not found. Expecting headers: Email, Password, RunFlag (Result optional).");
-            }
+            if (emailCol < 0 || passCol < 0 || flagCol < 0)
+                throw new RuntimeException("Required columns missing in sheet: Email, Password, RunFlag");
 
-            List<Object[]> rows = new ArrayList<>();
             int lastRow = sh.getLastRowNum();
+            List<Object[]> rows = new ArrayList<>();
 
-            for (int r = 1; r <= lastRow; r++) { // يبدأ من الصف الثاني (بعد العناوين)
+            for (int r = 1; r <= lastRow; r++) {
                 Row row = sh.getRow(r);
                 if (row == null) continue;
 
-                String email    = getCellString(row.getCell(emailCol));
+                String email = getCellString(row.getCell(emailCol));
                 String password = getCellString(row.getCell(passCol));
-                String runFlag  = getCellString(row.getCell(flagCol));
+                String runFlag = getCellString(row.getCell(flagCol));
 
-                // نعيد كل الصفوف؛ التحكم بالتنفيذ يتم داخل @Test (Skip إذا flag فارغ)
-                rows.add(new Object[]{ email, password, runFlag, r });
+                rows.add(new Object[]{email, password, runFlag, r});
             }
 
             Object[][] data = new Object[rows.size()][];
@@ -61,104 +135,45 @@ public class ExcelUtil {
             return data;
 
         } catch (Exception e) {
-            throw new RuntimeException("Failed reading Excel: " + e.getMessage(), e);
+            throw new RuntimeException("Failed reading Users sheet: " + e.getMessage(), e);
         }
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // ✅ كتابة النتيجة في عمود "Result"
     public static void writeResult(String path, String sheetName, int rowIndex, String result) {
-        ensureFileExists(path);
-
         try (FileInputStream fis = new FileInputStream(path);
              Workbook wb = WorkbookFactory.create(fis)) {
 
             Sheet sh = wb.getSheet(sheetName);
-            if (sh == null) {
-                throw new RuntimeException("Sheet not found: " + sheetName);
-            }
+            if (sh == null) return;
 
-            // تأكد أن صف العناوين موجود
             Row header = sh.getRow(0);
-            if (header == null) header = sh.createRow(0);
+            Map<String, Integer> cols = mapHeaderIndexes(header);
+            int resultCol = cols.getOrDefault("result", -1);
+            if (resultCol < 0) resultCol = header.getLastCellNum();
 
-            // ابحث عن عمود Result، وإن لم يوجد أنشئه كنهاية الأعمدة
-            Integer resultCol = findColumnIndexIgnoreCase(header, "Result");
-            if (resultCol == null) {
-                resultCol = (int) (header.getLastCellNum() == -1 ? 0 : header.getLastCellNum());
-                Cell resultHeaderCell = header.createCell(resultCol);
-                resultHeaderCell.setCellValue("Result");
-            }
-
-            // اكتب النتيجة في الصف المحدد
             Row row = sh.getRow(rowIndex);
             if (row == null) row = sh.createRow(rowIndex);
-            Cell cell = row.getCell(resultCol);
-            if (cell == null) cell = row.createCell(resultCol);
-            cell.setCellValue(result);
 
-            // حفظ الملف
+            Cell c = row.getCell(resultCol);
+            if (c == null) c = row.createCell(resultCol);
+            c.setCellValue(result);
+
             try (FileOutputStream fos = new FileOutputStream(path)) {
                 wb.write(fos);
             }
 
         } catch (Exception e) {
-            throw new RuntimeException("Failed writing result to Excel (row " + rowIndex + "): " + e.getMessage(), e);
-        }
-    }
-
-    // ----------------- مساعدات -----------------
-
-    private static Map<String, Integer> mapHeaderIndexes(Row header) {
-        Map<String, Integer> map = new HashMap<>();
-        short last = header.getLastCellNum();
-        for (int c = 0; c < last; c++) {
-            Cell cell = header.getCell(c);
-            String name = (cell == null) ? "" : cell.getStringCellValue();
-            if (name != null) {
-                String key = name.trim().toLowerCase(Locale.ROOT);
-                if (!key.isEmpty()) {
-                    map.put(key, c);
-                }
-            }
-        }
-        return map;
-    }
-
-    private static Integer findColumnIndexIgnoreCase(Row header, String colName) {
-        String target = colName.trim().toLowerCase(Locale.ROOT);
-        short last = header.getLastCellNum();
-        for (int c = 0; c < last; c++) {
-            Cell cell = header.getCell(c);
-            String name = (cell == null) ? "" : cell.getStringCellValue();
-            if (name != null && name.trim().toLowerCase(Locale.ROOT).equals(target)) {
-                return c;
-            }
-        }
-        return null;
-    }
-
-    private static String getCellString(Cell c) {
-        if (c == null) return "";
-        switch (c.getCellType()) {
-            case STRING:  return c.getStringCellValue().trim();
-            case NUMERIC:
-                if (DateUtil.isCellDateFormatted(c)) {
-                    return c.getDateCellValue().toString();
-                }
-                // حفظ الأرقام بدون كسور إذا كانت صحيحة
-                double v = c.getNumericCellValue();
-                long lv = (long) v;
-                return (v == lv) ? String.valueOf(lv).trim() : String.valueOf(v).trim();
-            case BOOLEAN: return String.valueOf(c.getBooleanCellValue()).trim();
-            case FORMULA:
-                try { return c.getStringCellValue().trim(); }
-                catch (Exception ignored) { return String.valueOf(c.getNumericCellValue()).trim(); }
-            default:      return "";
-        }
-    }
-
-    private static void ensureFileExists(String path) {
-        if (!Files.exists(Paths.get(path))) {
-            throw new RuntimeException("Excel file not found at: " + path);
+            System.out.println("⚠️ Failed writing result: " + e.getMessage());
         }
     }
 }
