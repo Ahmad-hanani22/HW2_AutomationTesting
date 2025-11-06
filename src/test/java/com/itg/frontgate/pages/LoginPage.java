@@ -11,15 +11,14 @@ public class LoginPage {
     private final WebDriverWait wait;
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        this.driver = (WebDriver) this;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // زيادة مدة الانتظار العام
     }
 
     public void verifyLoginPageLoaded() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         System.out.println("⬇️ Scrolling down to make Sign In section visible...");
-
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPageSelectors.EMAIL_INPUT));
             wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPageSelectors.PASSWORD_INPUT));
@@ -31,12 +30,14 @@ public class LoginPage {
     }
 
     public void enterEmail(String email) {
+        if(email == null || email.trim().isEmpty()) return;
         WebElement e = wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPageSelectors.EMAIL_INPUT));
         e.clear();
         e.sendKeys(email);
     }
 
     public void enterPassword(String pass) {
+        if(pass == null || pass.trim().isEmpty()) return;
         WebElement p = wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPageSelectors.PASSWORD_INPUT));
         p.clear();
         p.sendKeys(pass);
@@ -55,66 +56,44 @@ public class LoginPage {
 
     public String getErrorMessage() {
         WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
         try {
-            WebElement errorElement = null;
-
-            if (isElementVisible(LoginPageSelectors.ERROR_EMAIL, shortWait)) {
-                errorElement = driver.findElement(LoginPageSelectors.ERROR_EMAIL);
-            } else if (isElementVisible(LoginPageSelectors.ERROR_PASSWORD, shortWait)) {
-                errorElement = driver.findElement(LoginPageSelectors.ERROR_PASSWORD);
-            } else if (isElementVisible(LoginPageSelectors.ERROR_GENERAL, shortWait)) {
-                errorElement = driver.findElement(LoginPageSelectors.ERROR_GENERAL);
-            }
-
-            if (errorElement != null) {
-                String errorText = errorElement.getText().trim();
-                if (errorText.isEmpty()) {
-                    errorText = errorElement.getAttribute("innerText").trim();
-                }
-                System.out.println("⚠️ Error message detected: " + errorText);
-                return errorText;
-            }
-
-            return "";
-
+            WebElement errorElement = shortWait.until(
+                ExpectedConditions.visibilityOfElementLocated(LoginPageSelectors.ERROR_GENERAL)
+            );
+            String errorText = errorElement.getText().trim();
+            System.out.println("⚠️ Error message detected: " + errorText);
+            return errorText;
         } catch (Exception e) {
-            System.out.println("⚠️ No error message found or unexpected issue: " + e.getMessage());
-            return "";
-        }
-    }
-
-    private boolean isElementVisible(By locator, WebDriverWait wait) {
-        try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-            return true;
-        } catch (TimeoutException e) {
-            return false;
+            return ""; 
         }
     }
 
     public boolean isLoggedIn() {
         try {
-            WebDriverWait longWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-
+            System.out.println("▶️ Verifying login success...");
+            
+            WebDriverWait longWait = new WebDriverWait(driver, Duration.ofSeconds(30)); // انتظار أطول للدخول
             WebElement accountBtn = longWait.until(
                     ExpectedConditions.elementToBeClickable(LoginPageSelectors.ACCOUNT_BUTTON));
+            
+            System.out.println("✅ Account icon is ready. Clicking to open menu...");
+            
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", accountBtn);
-            System.out.println("👆 Clicked on My Account after login.");
 
+            System.out.println("⏳ Waiting for 'Welcome' message to appear...");
             WebElement welcome = longWait.until(
                     ExpectedConditions.visibilityOfElementLocated(LoginPageSelectors.WELCOME_TEXT));
 
             String welcomeMsg = welcome.getText().trim();
-            System.out.println("✅ Welcome message found: " + welcomeMsg);
-
+            System.out.println("✅✅✅ SUCCESS! Welcome message found: " + welcomeMsg);
+            
             return welcome.isDisplayed();
 
         } catch (TimeoutException te) {
-            System.out.println("❌ Welcome message not found after clicking My Account.");
+            System.out.println("❌ FAILED: Welcome message was not found within the time limit.");
             return false;
         } catch (Exception e) {
-            System.out.println("⚠️ Unexpected error checking login: " + e.getMessage());
+            System.out.println("⚠️ Unexpected error while checking login status: " + e.getMessage());
             return false;
         }
     }

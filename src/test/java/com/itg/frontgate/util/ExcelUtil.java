@@ -87,7 +87,56 @@ public class ExcelUtil {
         }
     }
 
-    
+ // ✅ قراءة شيت العناوين (Address Sheet)
+    public static Object[][] readAddress(String path, String sheetName) {
+        System.out.println("🧾 Trying to read Excel: " + path + " | Sheet: " + sheetName);
+        ensureFileExists(path);
+
+        try (FileInputStream fis = new FileInputStream(path);
+             Workbook wb = WorkbookFactory.create(fis)) {
+
+            Sheet sh = wb.getSheet(sheetName);
+            if (sh == null) throw new RuntimeException("Sheet not found: " + sheetName);
+
+            Row header = sh.getRow(0);
+            Map<String, Integer> cols = mapHeaderIndexes(header);
+
+            // التأكد من وجود الأعمدة المطلوبة
+            int firstNameCol = cols.getOrDefault("firstname", -1);
+            int lastNameCol  = cols.getOrDefault("lastname", -1);
+            int addressCol   = cols.getOrDefault("streetaddress", -1);
+            int zipCol       = cols.getOrDefault("zipcode", -1);
+            int cityCol      = cols.getOrDefault("city", -1);
+            int stateCol     = cols.getOrDefault("state", -1);
+            int phoneCol     = cols.getOrDefault("phone", -1);
+            int flagCol      = cols.getOrDefault("runflag", -1);
+
+            if (firstNameCol < 0 || lastNameCol < 0 || addressCol < 0 || zipCol < 0 || cityCol < 0 || stateCol < 0 || phoneCol < 0)
+                throw new RuntimeException("Required address columns are missing in the sheet.");
+
+            List<Object[]> rows = new ArrayList<>();
+            for (int r = 1; r <= sh.getLastRowNum(); r++) {
+                Row row = sh.getRow(r);
+                if (row == null) continue;
+
+                rows.add(new Object[]{
+                    getCellString(row.getCell(firstNameCol)),
+                    getCellString(row.getCell(lastNameCol)),
+                    getCellString(row.getCell(addressCol)),
+                    getCellString(row.getCell(zipCol)),
+                    getCellString(row.getCell(cityCol)),
+                    getCellString(row.getCell(stateCol)),
+                    getCellString(row.getCell(phoneCol)),
+                    getCellString(row.getCell(flagCol)),
+                    r 
+                });
+            }
+            return rows.toArray(new Object[0][]);
+
+        } catch (Exception e) {
+            throw new RuntimeException("Failed reading Address sheet: " + e.getMessage(), e);
+        }
+    }
     
     
  // ✅ قراءة شيت بسيط (مثل Users) — Email, Password, RunFlag

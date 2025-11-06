@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <suite name="Frontgate Full Scenario Suite">
 
-    <test name="Login and Add to Cart Test">
+    <test name="Full E2E Test">
         <classes>
-            <!-- 1. يتم تشغيل اختبار تسجيل الدخول أولاً -->
-            <class name="com.itg.frontgate.tests.LoginDataDrivenTest"/>
+            <!-- يمكنك تفعيل هذا الاختبار إذا أردت التحقق من حالات تسجيل الدخول أولاً -->
+            <!-- <class name="com.itg.frontgate.tests.LoginDataDrivenTest"/> -->
             
-            <!-- 2. بعد نجاح الدخول، يتم تشغيل اختبار إضافة المنتج على نفس المتصفح -->
+            <!-- هذا هو الاختبار الرئيسي والوحيد الذي ينفذ السيناريو كاملاً -->
             <class name="com.itg.frontgate.tests.AddToCartTest"/>
         </classes>
     </test>

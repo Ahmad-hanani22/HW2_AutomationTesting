@@ -1,235 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="4" failed="4" skipped="0">
+<testng-results ignored="0" total="3" passed="1" failed="0" skipped="2">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-30T17:49:55 AKDT" name="Frontgate Full Scenario Suite" finished-at="2025-10-30T17:55:35 AKDT" duration-ms="340252">
+  <suite started-at="2025-11-05T15:28:35 AKST" name="Frontgate Full Scenario Suite" finished-at="2025-11-05T15:30:24 AKST" duration-ms="109310">
     <groups>
     </groups>
-    <test started-at="2025-10-30T17:49:55 AKDT" name="Login and Add to Cart Test" finished-at="2025-10-30T17:55:35 AKDT" duration-ms="340252">
-      <class name="com.itg.frontgate.tests.LoginDataDrivenTest">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:49:55 AKDT" name="beforeSuite" finished-at="2025-10-30T17:49:55 AKDT" duration-ms="126" status="PASS">
+    <test started-at="2025-11-05T15:28:35 AKST" name="Full E2E Test" finished-at="2025-11-05T15:30:24 AKST" duration-ms="109310">
+      <class name="com.itg.frontgate.tests.AddToCartTest">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.itg.frontgate.tests.AddToCartTest@682b2fa]" started-at="2025-11-05T15:28:35 AKST" name="beforeSuite" finished-at="2025-11-05T15:28:35 AKST" duration-ms="191" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:49:55 AKDT" name="setUp" finished-at="2025-10-30T17:49:56 AKDT" duration-ms="1057" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.itg.frontgate.tests.AddToCartTest@682b2fa]" started-at="2025-11-05T15:28:35 AKST" name="setUp" finished-at="2025-11-05T15:28:36 AKST" duration-ms="1375" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:49:57 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-30T17:50:57 AKDT" duration-ms="60013" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ahmadj7hanani0@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0569630981Aa$]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[x]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[No feedback shown for ahmadj7hanani0@gmail.com]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: No feedback shown for ahmadj7hanani0@gmail.com
-at org.testng.Assert.fail(Assert.java:111)
-at com.itg.frontgate.tests.LoginDataDrivenTest.loginCases(LoginDataDrivenTest.java:92)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginCases -->
-        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:50:57 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-30T17:51:48 AKDT" duration-ms="51717" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ahmad@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0569630981Aa$]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[x]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginCases -->
-        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:51:48 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-30T17:52:38 AKDT" duration-ms="49788" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ahmadj7hanani0@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0569630981Aa$4]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[x]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[3]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginCases -->
-        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:52:38 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-30T17:53:08 AKDT" duration-ms="30398" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0569630981Aa$]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[x]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[4]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Unexpected error message: Error: Please Enter Email Address.]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Unexpected error message: Error: Please Enter Email Address.
-at org.testng.Assert.fail(Assert.java:111)
-at com.itg.frontgate.tests.LoginDataDrivenTest.loginCases(LoginDataDrivenTest.java:78)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginCases -->
-        <test-method signature="loginCases(java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:53:08 AKDT" name="loginCases" data-provider="loginData" finished-at="2025-10-30T17:53:43 AKDT" duration-ms="34742" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ahmadj7hanani0@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[x]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginCases -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:55:35 AKDT" name="tearDown" finished-at="2025-10-30T17:55:35 AKDT" duration-ms="459" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.itg.frontgate.tests.LoginDataDrivenTest@477b4cdf]" started-at="2025-10-30T17:55:35 AKDT" name="afterSuite" finished-at="2025-10-30T17:55:36 AKDT" duration-ms="509" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterSuite -->
-      </class> <!-- com.itg.frontgate.tests.LoginDataDrivenTest -->
-      <class name="com.itg.frontgate.tests.AddToCartTest">
-        <test-method signature="addProductsToCart(java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.AddToCartTest@1e800aaa]" started-at="2025-10-30T17:53:43 AKDT" name="addProductsToCart" data-provider="productsData" finished-at="2025-10-30T17:54:03 AKDT" duration-ms="19533" status="PASS">
+        <test-method signature="endToEndProductCheckout(java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.AddToCartTest@682b2fa]" started-at="2025-11-05T15:28:37 AKST" name="endToEndProductCheckout" data-provider="productsData" finished-at="2025-11-05T15:30:24 AKST" duration-ms="107071" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -264,8 +50,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addProductsToCart -->
-        <test-method signature="addProductsToCart(java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.AddToCartTest@1e800aaa]" started-at="2025-10-30T17:54:03 AKDT" name="addProductsToCart" data-provider="productsData" finished-at="2025-10-30T17:55:02 AKDT" duration-ms="58828" status="FAIL">
+        </test-method> <!-- endToEndProductCheckout -->
+        <test-method signature="endToEndProductCheckout(java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.AddToCartTest@682b2fa]" started-at="2025-11-05T15:30:24 AKST" name="endToEndProductCheckout" data-provider="productsData" finished-at="2025-11-05T15:30:24 AKST" duration-ms="2" status="SKIP">
           <params>
             <param index="0">
               <value>
@@ -289,7 +75,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </param>
             <param index="4">
               <value>
-                <![CDATA[x]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="5">
@@ -298,16 +84,13 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
+          <exception class="org.testng.SkipException">
             <message>
-              <![CDATA[VALIDATION FAILED: The success message did not appear correctly. Found: '' expected [true] but found [false]]]>
+              <![CDATA[RunFlag for product is empty, skipping row 2]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: VALIDATION FAILED: The success message did not appear correctly. Found: '' expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at com.itg.frontgate.tests.AddToCartTest.addProductsToCart(AddToCartTest.java:64)
+              <![CDATA[org.testng.SkipException: RunFlag for product is empty, skipping row 2
+at com.itg.frontgate.tests.AddToCartTest.endToEndProductCheckout(AddToCartTest.java:42)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -336,11 +119,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.testng.SkipException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addProductsToCart -->
-        <test-method signature="addProductsToCart(java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.AddToCartTest@1e800aaa]" started-at="2025-10-30T17:55:02 AKDT" name="addProductsToCart" data-provider="productsData" finished-at="2025-10-30T17:55:35 AKDT" duration-ms="33257" status="FAIL">
+        </test-method> <!-- endToEndProductCheckout -->
+        <test-method signature="endToEndProductCheckout(java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,int)[pri:0, instance:com.itg.frontgate.tests.AddToCartTest@682b2fa]" started-at="2025-11-05T15:30:24 AKST" name="endToEndProductCheckout" data-provider="productsData" finished-at="2025-11-05T15:30:24 AKST" duration-ms="2" status="SKIP">
           <params>
             <param index="0">
               <value>
@@ -364,7 +147,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
             </param>
             <param index="4">
               <value>
-                <![CDATA[x]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="5">
@@ -373,16 +156,13 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
+          <exception class="org.testng.SkipException">
             <message>
-              <![CDATA[Product 'Resort Bath Sheet' was not found. expected [true] but found [false]]]>
+              <![CDATA[RunFlag for product is empty, skipping row 3]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Product 'Resort Bath Sheet' was not found. expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at com.itg.frontgate.tests.AddToCartTest.addProductsToCart(AddToCartTest.java:54)
+              <![CDATA[org.testng.SkipException: RunFlag for product is empty, skipping row 3
+at com.itg.frontgate.tests.AddToCartTest.endToEndProductCheckout(AddToCartTest.java:42)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -411,11 +191,19 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.testng.SkipException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addProductsToCart -->
+        </test-method> <!-- endToEndProductCheckout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.itg.frontgate.tests.AddToCartTest@682b2fa]" started-at="2025-11-05T15:30:24 AKST" name="tearDown" finished-at="2025-11-05T15:30:24 AKST" duration-ms="331" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.itg.frontgate.tests.AddToCartTest@682b2fa]" started-at="2025-11-05T15:30:24 AKST" name="afterSuite" finished-at="2025-11-05T15:30:25 AKST" duration-ms="221" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
       </class> <!-- com.itg.frontgate.tests.AddToCartTest -->
-    </test> <!-- Login and Add to Cart Test -->
+    </test> <!-- Full E2E Test -->
   </suite> <!-- Frontgate Full Scenario Suite -->
 </testng-results>
